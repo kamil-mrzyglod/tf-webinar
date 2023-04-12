@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   deployAKS:
-    name: 'Deploy AKS using Terraform'
+    name: 'Plan AKS deployment using Terraform'
     runs-on: ubuntu-latest
 
     # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
