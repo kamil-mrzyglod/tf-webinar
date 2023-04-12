@@ -36,7 +36,7 @@ jobs:
 
     # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
     - name: Terraform Init
-      run: terraform init -var appId="${{ secrets.SP_CLIENTID }}" -var password="${{ secrets.SP_PASSWORD }}"
+      run: terraform init -var appId="${{ secrets.SP_CLIENTID }}" -var spPass="${{ secrets.SP_PASSWORD }}"
 
     # Checks that all Terraform configuration files adhere to a canonical format
     - name: Terraform Format
@@ -44,8 +44,8 @@ jobs:
 
     # Generates an execution plan for Terraform
     - name: Terraform Plan
-      run: terraform plan -var appId="${{ secrets.SP_CLIENTID }}" -var password="${{ secrets.SP_PASSWORD }}"
+      run: terraform plan -var appId="${{ secrets.SP_CLIENTID }}" -var spPass="${{ secrets.SP_PASSWORD }}"
 
       # On push to "main", build or change infrastructure according to Terraform configuration files
     - name: Terraform Apply
-      run: terraform apply -auto-approve -var appId="${{ secrets.SP_CLIENTID }}" -var password="${{ secrets.SP_PASSWORD }}"
+      run: terraform apply -auto-approve -var appId="${{ secrets.SP_CLIENTID }}" -var spPass="${{ secrets.SP_PASSWORD }}"

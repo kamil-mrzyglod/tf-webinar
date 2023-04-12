@@ -2,6 +2,6 @@ variable "appId" {
   description = "Azure Kubernetes Service Cluster service principal"
 }
 
-variable "password" {
+variable "spPass" {
   description = "Azure Kubernetes Service Cluster password"
 }
