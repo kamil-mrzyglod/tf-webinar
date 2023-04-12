@@ -1,5 +1,7 @@
 local/.terraform.lock.hcl
 .terraform
-*/*.backup
+**/*.backup
 local/generated/*
-*/*.tfstate
+**/*.tfstate
+**/*.lock.hcl
+**/*.example
