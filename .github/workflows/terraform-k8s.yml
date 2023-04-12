@@ -59,6 +59,7 @@ jobs:
     name: 'Deploy AKS using Terraform'
     runs-on: ubuntu-latest
     environment: webinar
+    needs: deployAKS
 
     # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
     defaults:
@@ -99,7 +100,7 @@ jobs:
         ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
         ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
   deployClusterConfiguration:
-    needs: deployAKS
+    needs: deployAKSApproved
     name: 'Deploy cluster configuration using Terraform'
     runs-on: ubuntu-latest
 
