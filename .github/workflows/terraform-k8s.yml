@@ -17,7 +17,7 @@ jobs:
     defaults:
       run:
         shell: bash
-        working-directory: k8s/basic-resources
+        working-directory: k8s/aks-cluster
 
     steps:
     # Checkout the repository to the GitHub Actions runner
