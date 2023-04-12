@@ -12,10 +12,13 @@ terraform {
 }
 
 data "terraform_remote_state" "aks" {
-  backend = "local"
+  backend = "azurerm"
 
   config = {
-    path = "../aks-cluster/terraform.tfstate"
+    resource_group_name  = "tf-rg"
+    storage_account_name = "poznajtfstate"
+    container_name       = "tfstate"
+    key                  = "prod.terraform.tfstate"
   }
 }
 
